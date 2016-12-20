@@ -21,6 +21,21 @@ REQUIREMENTS:
 - Adobe Illustrator
 - Mac OS
 
+You will need to edit the shell_script_illustrator file.
+The line of code under the commented line that reads (around line 21):  
+ '### NEED TO MODIFY if Illustrator is installed to a different location'  
+ will need to be modified if the location of Adobe Illustrator is different on your machine.
+ 
+e.g. change this:  
+```
+export appname="/Applications/Adobe Illustrator CS6/Adobe Illustrator.app"
+```
+to this:  
+ ```
+export appname="<path-to-illustrator-on-your-computer>"
+```
+
+
 (I think you can still run the jsx script from Windows, but you need to figure out how to feed it to Adobe Illustrator from the commandline)
 
 		  Pipeline: [Going from Top to Bottom]
@@ -37,9 +52,14 @@ REQUIREMENTS:
 	      			
 If you edit the .jsx script I suggest using any IDE other than the default ExtendScript Toolkit App, e.g. IntelliJ IDEA or Eclipse.
 
-The steps done in the bash script need to be replaced with something else for Windows users. Something that talks to Adobe Illustrator.
+*For Windows Users - the steps done in the bash script need to be replaced with something else, something that talks to Adobe Illustrator.*
 
-The whole process works best if you startout with Adobe Illustrator or ExtendScript Toolkit closed. For me, it works fairly quickly for pdf files that have been fractured into less than 2000 path objects and it starts to really have some trouble with pdfs that have been split up into more than 10K path objects.
+The whole process works best if you startout with Adobe Illustrator and ExtendScript Toolkit closed. For me, it works fairly quickly for pdf files that have been fractured into less than 2000 path objects and it starts to really have some trouble with pdfs that have been split up into more than 10K path objects.
+
+Each step in the pipeline works without doing the preceeding steps if you don't want to use Matlab as the origin of the process. You can run the bash script from a terminal. You can open a file in illustrator and run the .jsx script without doing any of the preceeding steps.
+Illustrator -> File -> Scripts -> Other Scripts -> Select fixMatlabPDFOutput.jsx.
+
+It can be useful for testing to start closest to the bottom of the pipeline and work your way back to the top if there's an issue and you don't know what's going wrong.
 
 ##2. fix_matlab_eps.py
 Originally from (https://github.com/Sbte/fix_matlab_eps)
@@ -78,7 +98,7 @@ setenv('PATH', path1)
 ```  
 
 4. Repair libtiff library (this might have been specific to my machine)
-(kyamagu/mexopencv#250) [at bottom]  
+(https://github.com/kyamagu/mexopencv/issues/250) [at bottom]  
 
 	This is what I did:  
 backed up original file to: /Applications/MATLAB_R2016a.app/bin/maci64/  backup_libtiff.5.dylib  
@@ -87,7 +107,7 @@ simlinked from: /usr/local/opt/libtiff/lib/libtiff.5.dylib
 5. install ghostscript  
 http://brewformulas.org/Ghostscript
 
-6. You should be able to run fix_matlab.eps.py now.  
+6. You should be able to run fix_matlab_eps.py now.  
 For Example see ./fix_matlab_eps/image_output_scratchpad.m
 
 
