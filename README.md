@@ -24,7 +24,7 @@ REQUIREMENTS:
 You will need to edit the shell_script_illustrator.sh file.
 The line of code under the commented line that reads (around line 21):  
 ``` 
- '### NEED TO MODIFY if Illustrator is installed to a different location'  
+ ### NEED TO MODIFY if Illustrator is installed to a different location  
  ```
  will need to be modified if the location of Adobe Illustrator is different on your machine.
  
@@ -36,7 +36,10 @@ to this:
  ```
 export appname="<path-to-illustrator-on-your-computer>"
 ```
-
+  
+===
+**Overview of the entire process**
+===  
 
 		  Pipeline: [Going from Top to Bottom]
 			 	 	  			 	 	  
