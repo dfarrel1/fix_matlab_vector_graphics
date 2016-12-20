@@ -74,7 +74,7 @@ A Python script to fix artifacts in EPS files generated from Matlab contour plot
 
 **Requirements**  
 - Inkscape  
-- Python.  
+- Python    
 
 For Mac users there are a few extra steps that I'm listing here:
 
