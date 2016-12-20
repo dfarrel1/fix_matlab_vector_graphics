@@ -5,7 +5,7 @@ Contained within are two separate workarounds for fixing Matlab vector graphics 
 
 The first is a jsx javascript hack. This will only work on Macs as is. You will need to edit it to get it to work on a Windows machine. I dont' know if it's possible to use this jsx fix on Linux. 
 
-The second is a fix created by [Sven Baars](https://github.com/Sbte "Sven Baars") with a python script that uses Inkscape. I packaged both together for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
+The second is a fix created by [Sven Baars](https://github.com/Sbte "Sven Baars") with a python script that uses Inkscape. I packaged it with my own for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
 
 The .jsx script solution works better in creating the final vector graphics that I want, but it's very slow, and sometimes Illustrator and ExtendScript Toolkit need to be restarted. If you can get the result you want from fix_matlab_eps.py, then that's the one to use.
 
