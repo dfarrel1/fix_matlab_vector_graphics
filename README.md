@@ -5,7 +5,7 @@ Contained within are two separate workarounds for fixing Matlab vector graphics 
 
 The first is a jsx javascript hack. This will only work on Macs as is. You will need to edit it to get it to work on a Windows machine. I dont' know if it's possible to use this jsx fix on Linux. 
 
-The second is a fix created by Sven Baars with a python script that uses Inkscape. I packaged both together for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
+The second is a fix created by [Sven Baars](https://github.com/Sbte "Sven Baars") with a python script that uses Inkscape. I packaged both together for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
 
 The .jsx script solution works better in creating the final vector graphics that I want, but it's very slow, and sometimes Illustrator and ExtendScript Toolkit need to be restarted. If you can get the result you want from fix_matlab_eps.py, then that's the one to use.
 
@@ -21,9 +21,11 @@ REQUIREMENTS:
 - Adobe Illustrator
 - Mac OS
 
-You will need to edit the shell_script_illustrator file.
+You will need to edit the shell_script_illustrator.sh file.
 The line of code under the commented line that reads (around line 21):  
+``` 
  '### NEED TO MODIFY if Illustrator is installed to a different location'  
+ ```
  will need to be modified if the location of Adobe Illustrator is different on your machine.
  
 e.g. change this:  
@@ -35,8 +37,6 @@ to this:
 export appname="<path-to-illustrator-on-your-computer>"
 ```
 
-
-(I think you can still run the jsx script from Windows, but you need to figure out how to feed it to Adobe Illustrator from the commandline)
 
 		  Pipeline: [Going from Top to Bottom]
 			 	 	  			 	 	  
@@ -52,14 +52,14 @@ export appname="<path-to-illustrator-on-your-computer>"
 	      			
 If you edit the .jsx script I suggest using any IDE other than the default ExtendScript Toolkit App, e.g. IntelliJ IDEA or Eclipse.
 
-*For Windows Users - the steps done in the bash script need to be replaced with something else, something that talks to Adobe Illustrator.*
+*For Windows Users - the steps done in the bash script need to be replaced with something else, something that talks to Adobe Illustrator. I think you can still run the jsx script from Windows, but you need to figure out how to feed it to Adobe Illustrator from the commandline.*
 
 The whole process works best if you startout with Adobe Illustrator and ExtendScript Toolkit closed. For me, it works fairly quickly for pdf files that have been fractured into less than 2000 path objects and it starts to really have some trouble with pdfs that have been split up into more than 10K path objects.
 
 Each step in the pipeline works without doing the preceeding steps if you don't want to use Matlab as the origin of the process. You can run the bash script from a terminal. You can open a file in illustrator and run the .jsx script without doing any of the preceeding steps.
 Illustrator -> File -> Scripts -> Other Scripts -> Select fixMatlabPDFOutput.jsx.
 
-It can be useful for testing to start closest to the bottom of the pipeline and work your way back to the top if there's an issue and you don't know what's going wrong.
+It can be useful for testing to start closest to the bottom of the pipeline and work your way back to the top.
 
 ##2. fix_matlab_eps.py
 Originally from (https://github.com/Sbte/fix_matlab_eps)
