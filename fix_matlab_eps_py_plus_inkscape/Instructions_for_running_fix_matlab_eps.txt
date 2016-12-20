@@ -1,0 +1,34 @@
+** Note for zlab_codebase users**
+This File is be duplicated in the docs folder:
+<zlab_codebase-location>/Dene/SEGGA_Docs/instructions_for_fix_matlab_eps.txt
+
+---Steps needed for running 'fix_matlab_eps.py'---
+(https://github.com/Sbte/fix_matlab_eps)
+
+1. After following all install instructions for Inkscape and XQuartz it was necessary for me to create a symlink for Inkscape in the PATH :
+ln -s /Applications/Inkscape.app/Contents/Resources/bin/inkscape   /usr/local/bin/inkscape
+(and be sure to link 'inkscape' not 'inkscape-bin')
+(http://stackoverflow.com/questions/22085168/inkscape-command-line-where-is-it-on-mac)
+
+2. When testing python code that calls inkscape, specify full paths of image and vector files being loaded.
+(https://bugs.launchpad.net/inkscape/+bug/1449251)
+
+3. Add '/usr/local/bin/' to the PATH in matlab
+(https://www.mathworks.com/help/matlab/matlab_external/run-external-commands-scripts-and-programs.html)
+
+path1 = getenv('PATH')
+path1 = [path1 ':/usr/local/bin']
+setenv('PATH', path1)
+!echo $PATH 
+
+4. Repair libtiff library (this might have been specific to my machine)
+(kyamagu/mexopencv#250)
+[at bottom]
+backed up original file to: /Applications/MATLAB_R2016a.app/bin/maci64/backup_libtiff.5.dylib
+simlinked from: /usr/local/opt/libtiff/lib/libtiff.5.dylib
+
+5. install ghostscript
+http://brewformulas.org/Ghostscript
+
+6. You should be able to run fix_matlab.eps.py now.
+For Example see <zlab_codebase>/Dene/active/miscellaneous/fix_image_output/fix_matlab_eps/image_output_scratchpad.m

@@ -1,0 +1,59 @@
+---------------------------------------------------------
+---PRINTING INTRO TEXT FILE---
+fix_Matlab2014bplus_pdf_output.m fixes Matlab pdf output issues
+that exist for all Matlab versions 2014b and later.
+
+REQUIREMENTS:
+- Adobe Illustrator
+- Mac OS
+(you can still run the jsx script from Windows, but you need to
+figure out how to feed it to Adobe Illustrator from the commandline)
+
+For best results (DO THESE STEPS BEFORE RUNNING THIS FUN):
+1. Isolate the pdfs that you need to fix into their own directory.
+2. Change directory to that location in Matlab.
+3. Close all files that are open in Adobe Illustrator.
+4. Close the Adobe Illustrator application if it is open.
+5. Close ExtendScript Toolkit if it is open.
+6. Close Apple Script Editor if it is open.
+7. Run this function (fix_Matlab2014b_pdf_output.m)
+8. Be patient - For PDFs that have been fractured into thousands of paths it can take up to an hour
+`  to run the repair jsx script. You should see console output in the JavaScript Console
+`  in the ExtendScript Toolkit Interface, which automatically loads up when Adobe Illustrator
+`  is told to run the jsx fix script.
+
+***I'm not sure why it takes so long. Coding this fix entailed navigating multiple blackbox problems
+created by the coupling of two proprietary softwares, Mathworks and Adobe. 
+
+If you're experienced in programming scripts for Adobe applications or javascript,
+please inspect my javascript function and try to speed it up. 
+I am not an expert, just tried to fix a problem.
+
+---The jsx file is located:
+./fix_matlab_pdfs__jsx_plus_ai/fixMatlabPDFOutput.jsx
+
+TESTED ON:
+Mac Pro Desktop
+OS 10.10.5
+MATLAB Version: 9.0.0.341360 (R2016a)
+Adobe Illustrator CS6
+
+----------- + Notes + ----------- 
+Workflow: [Going from Top to Bottom]
+-	      (Matlab) fix_Matlab2014bplus_pdf_output.m
+-	      			** CALLS ** 
+-	      (bash script) shell_script_illustrator.sh
+-	      			** CALLS ** 
+-	      (Adobe Illustrator) [loading file and running jsx script]
+-	      			** CALLS ** 
+-	      (ExtendScript Toolkit) fixMatlabPDFOutput.jsx
+-	      			** Implements ** 
+-	      (Adobe Illustrator) emulating actions described in jsx script
+
+Text outputs are routed to the Matlab Command Window
+so you should be able to see all of this happening from Matlab.
+
+
+Requirements and Instructions at TOP.
+---FINISHED INTRO TEXT FILE---
+---------------------------------------------------------
