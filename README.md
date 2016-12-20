@@ -11,10 +11,10 @@ The .jsx script solution works better in creating the final vector graphics that
 
 ## 1. fix_matlab_pdfs__jsx_plus_ai
 Runnable function from Matlab:
-fix_Matlab2014bplus_pdf_output.m
+fix_Matlab2014b_pdf_output.m
 
 **Description**  
-fix_Matlab2014bplus_pdf_output.m fixes Matlab pdf output issues that exist for all Matlab versions 2014b and later.
+fix_Matlab2014b_pdf_output.m fixes Matlab pdf output issues that exist for all Matlab versions 2014b and later.
 
 REQUIREMENTS:
 
@@ -25,7 +25,7 @@ REQUIREMENTS:
 
 		  Pipeline: [Going from Top to Bottom]
 			 	 	  			 	 	  
--	      (Matlab) fix_Matlab2014bplus_pdf_output.m    
+-	      (Matlab) fix_Matlab2014b_pdf_output.m    
     
 -	      (bash script) shell_script_illustrator.sh    
 					  
