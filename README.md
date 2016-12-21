@@ -3,7 +3,10 @@
 ## Overview
 Contained within are two separate workarounds for fixing Matlab vector graphics output (eps, pdf). They both unite objects of the same color that Matlab fractures when exporting.
 
-The first is a jsx javascript hack. This will only work on Macs as is. You will need to edit it to get it to work on a Windows machine. I dont' know if it's possible to use this jsx fix on Linux. 
+The first is a jsx javascript hack. As it is, this will only work on **Macs** if you want to do everything from Matlab. You still use it on a **Windows** machine (I think), but you will need to open the vector graphics file in Illustrator manually, then select the script to run through Illustrators dropdown menu:  
+Illustrator -> File -> Scripts -> Other Scripts -> Select fixMatlabPDFOutput.jsx.
+  
+  
 
 The second is a fix created by [Sven Baars](https://github.com/Sbte "Sven Baars") with a python script that uses Inkscape. I packaged it with my own for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
 
