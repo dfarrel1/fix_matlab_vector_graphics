@@ -10,7 +10,7 @@ Illustrator -> File -> Scripts -> Other Scripts -> Select fixMatlabPDFOutput.jsx
 
 The second is a fix created by [Sven Baars](https://github.com/Sbte "Sven Baars") with a python script that uses Inkscape. I packaged it with my own for convenience and I've added install instructions for Mac users and a couple other useful matlab functions.
 
-The .jsx script solution works better in creating the final vector graphics that I want, but it's very slow, and sometimes Illustrator and ExtendScript Toolkit need to be restarted. If you can get the result you want from fix_matlab_eps.py, then that's the one to use.
+The .jsx script solution works better in creating the final vector graphics that I want, but it's very slow, and sometimes Illustrator and ExtendScript Toolkit need to be restarted. fix_matlab_eps.py is faster, and uses free software, but the resulting file still has fractured graphics after I run it.
 
 ## 1. fix_matlab_pdfs__jsx_plus_ai
 Runnable function from Matlab:
