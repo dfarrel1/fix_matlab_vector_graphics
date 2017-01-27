@@ -119,7 +119,7 @@ For Example see ./fix_matlab_eps/image_output_scratchpad.m
 
 **Example (for fix_matlab_eps.py)**
 
-Here is an example of what the EPS looks like before and after sven's script.  
+Here is an example of what the EPS looks like before and after Sven's script.  
 The EPS was created by
 
 ```
